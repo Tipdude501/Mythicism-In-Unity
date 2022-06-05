@@ -69,8 +69,8 @@ MonoBehaviour:
   cameraComponent: {fileID: 0}
   orientRotationToMovement: 1
   maxMoveSpeed: 0
-  maxRunSpeed: 8.01
-  rotateSpeed: 800
+  maxRunSpeed: 8
+  rotateSpeed: 900
   movementDirection: {x: 0, y: 0, z: 0}
 --- !u!1 &8351949448579432561
 GameObject:
