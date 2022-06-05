@@ -11,12 +11,19 @@ public class Player : MonoBehaviour
     [SerializeField] public CharacterController movementComponent;
     [SerializeField] public Camera cameraComponent;
 
+    [Header("Input Data")]
+    private float forwardInput;
+    private float rightInput;
+
+    [Header("State Data")]
+    [SerializeField] public bool orientRotationToMovement;
 
     [Header("Movement Data")]
     [SerializeField] protected float maxMoveSpeed;
     [SerializeField] protected float maxRunSpeed;
     [SerializeField] protected float rotateSpeed;
     [SerializeField] protected Vector3 movementDirection = Vector3.zero;
+
     #endregion
 
     #region Behaviors
@@ -29,26 +36,41 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ReceiveMovementInput();
+        
+
+    }
+
+    private void FixedUpdate()
+    {
         UpdateMovement();
     }
 
-    // Update the player's movement based on the Vertical and Horiztonal axes
+
+    // Get the latest input from the Vertical and Horizontal axes
+    private void ReceiveMovementInput()
+    {
+        forwardInput = Input.GetAxis("Vertical");
+        rightInput = Input.GetAxis("Horizontal");
+    }
+
+    // Update the player's movement based on the latest input
     private void UpdateMovement()
     {
-        // Get input axes
-        float forwardInput = Input.GetAxis("Vertical");
-        float rightInput = Input.GetAxis("Horizontal");
-
         // Get a forward and right axes relative to camera
-        Vector4 cameraZAxis = transform.worldToLocalMatrix.inverse.GetRow(2);
-        Vector4 cameraXAxis = transform.worldToLocalMatrix.inverse.GetRow(0);
-        Vector3 cameraForward = new Vector3(cameraZAxis.x, cameraZAxis.y, cameraZAxis.z).normalized;
-        Vector3 cameraRight = new Vector3(cameraXAxis.x, cameraXAxis.y, cameraXAxis.z).normalized;
+        Vector3 cameraForward = cameraComponent.transform.forward;
+        Vector3 cameraRight = cameraComponent.transform.right;
+        cameraForward.y = 0;
+        cameraRight.y = 0;
+        cameraForward = cameraForward.normalized;
+        cameraRight = cameraRight.normalized;
 
-        // Orient rotation to forward movement
-        if(forwardInput > 0)
+        // Orient rotation to movement
+        if(orientRotationToMovement && movementComponent.velocity.magnitude > 0)
         {
-
+            movementDirection = movementComponent.velocity;
+            movementDirection.y = 0;
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(movementDirection), rotateSpeed * Time.deltaTime);
         }
 
         // Calculate move direction

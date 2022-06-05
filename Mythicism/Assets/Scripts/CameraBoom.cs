@@ -5,15 +5,8 @@ using UnityEngine;
 public class CameraBoom : MonoBehaviour
 {
     #region Members
-    [Header("Controller Data")]
-    [SerializeField] public Animator animatorComponent;
-    [SerializeField] public CapsuleCollider collisionComponent;
-    [SerializeField] public CharacterController movementComponent;
-    [SerializeField] public Camera cameraComponent;
-
-
-    [Header("Movement Data")]
-    [SerializeField] protected Vector3 movementDirection = Vector3.zero;
+    [SerializeField] public Transform target;
+    [SerializeField] public float followSmoothTime; 
     #endregion
 
 
@@ -22,6 +15,18 @@ public class CameraBoom : MonoBehaviour
     void Update()
     {
 
+    }
+
+    private void FixedUpdate()
+    {
+        float velocity = 0;
+
+        Vector3 newPosition = transform.position;
+        newPosition.x = Mathf.SmoothDamp(newPosition.x, target.position.x, ref velocity, followSmoothTime);
+        newPosition.y = Mathf.SmoothDamp(newPosition.y, target.position.y, ref velocity, followSmoothTime);
+        newPosition.z = Mathf.SmoothDamp(newPosition.z, target.position.z, ref velocity, followSmoothTime);
+
+        transform.position = newPosition;
     }
 
 
