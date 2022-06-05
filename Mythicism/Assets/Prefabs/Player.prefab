@@ -65,7 +65,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatorComponent: {fileID: 7588375537125288028}
-  collisionComponent: {fileID: 0}
   movementComponent: {fileID: 4045858578822531631}
   cameraComponent: {fileID: 0}
   orientRotationToMovement: 1

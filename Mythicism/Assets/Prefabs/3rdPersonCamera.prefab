@@ -129,3 +129,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   followSmoothTime: 0.01
+  yawSpeed: 800
+  pitchSpeed: 600

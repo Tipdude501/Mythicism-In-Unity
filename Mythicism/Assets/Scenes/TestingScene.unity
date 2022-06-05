@@ -3124,11 +3124,6 @@ PrefabInstance:
       propertyPath: cameraComponent
       value: 
       objectReference: {fileID: 764045120}
-    - target: {fileID: 4045858578822531629, guid: 73b20774df854f64c9ce8951acb2e711,
-        type: 3}
-      propertyPath: orientRotationToMovement
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4045858578822531630, guid: 73b20774df854f64c9ce8951acb2e711,
         type: 3}
       propertyPath: m_LocalPosition.x
