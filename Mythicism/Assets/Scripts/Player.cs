@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
     #region Members
     [Header("Controller Data")]
     [SerializeField] public Animator animatorComponent;
-    [SerializeField] public CapsuleCollider collisionComponent;
     [SerializeField] public CharacterController movementComponent;
     [SerializeField] public Camera cameraComponent;
 
@@ -44,6 +43,10 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         UpdateMovement();
+
+        // Update animation parameters
+        animatorComponent.SetFloat("ForwardSpeed", Vector3.Dot(movementComponent.velocity, transform.forward) / maxMoveSpeed);
+        animatorComponent.SetFloat("RightSpeed", Vector3.Dot(movementComponent.velocity, transform.right) / maxMoveSpeed);
     }
 
 
