@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
 
     [Header("State Data")]
     [SerializeField] public bool orientRotationToMovement;
+    private bool isRolling;
 
     [Header("Movement Data")]
     [SerializeField] protected float maxMoveSpeed;
@@ -36,7 +37,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         ReceiveMovementInput();
-        
+        ReceiveDodgeInput();
 
     }
 
@@ -49,6 +50,15 @@ public class Player : MonoBehaviour
         animatorComponent.SetFloat("RightSpeed", Vector3.Dot(movementComponent.velocity, transform.right) / maxMoveSpeed);
     }
 
+    // Get the latest input from the Dodge button
+    private void ReceiveDodgeInput()
+    {
+        if (Input.GetButtonDown("Dodge"))
+        {
+            Debug.Log("Dodge received");
+            animatorComponent.SetTrigger("Roll");
+        }
+    }
 
     // Get the latest input from the Vertical and Horizontal axes
     private void ReceiveMovementInput()
