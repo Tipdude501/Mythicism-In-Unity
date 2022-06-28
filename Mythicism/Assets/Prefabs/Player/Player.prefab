@@ -30,6 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3858710821069253084}
+  - {fileID: 3230134507460974144}
   - {fileID: 4589026785087205926}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -64,7 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7523ccd5d16c2c4db54d7090afd8ee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorComponent: {fileID: 7588375537125288028}
+  animatorComponent: {fileID: 3230134507451955658}
   movementComponent: {fileID: 4045858578822531631}
   cameraComponent: {fileID: 0}
   orientRotationToMovement: 1
@@ -102,6 +103,92 @@ Transform:
   m_Father: {fileID: 4045858578822531630}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3859221584783072874
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4045858578822531630}
+    m_Modifications:
+    - target: {fileID: 1827629865255471146, guid: 2b95b8c937251bf4a862469a23da16b2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827629865255471146, guid: 2b95b8c937251bf4a862469a23da16b2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827629865255471146, guid: 2b95b8c937251bf4a862469a23da16b2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827629865255471146, guid: 2b95b8c937251bf4a862469a23da16b2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827629865255471146, guid: 2b95b8c937251bf4a862469a23da16b2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827629865255471146, guid: 2b95b8c937251bf4a862469a23da16b2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827629865255471146, guid: 2b95b8c937251bf4a862469a23da16b2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827629865255471146, guid: 2b95b8c937251bf4a862469a23da16b2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827629865255471146, guid: 2b95b8c937251bf4a862469a23da16b2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827629865255471146, guid: 2b95b8c937251bf4a862469a23da16b2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827629865255471146, guid: 2b95b8c937251bf4a862469a23da16b2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827629865255638474, guid: 2b95b8c937251bf4a862469a23da16b2,
+        type: 3}
+      propertyPath: m_Name
+      value: Biomech_Mutant_Skin_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827629865262933920, guid: 2b95b8c937251bf4a862469a23da16b2,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: adbf853d48ad3fd43839f22eefc5aff5, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2b95b8c937251bf4a862469a23da16b2, type: 3}
+--- !u!4 &3230134507460974144 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1827629865255471146, guid: 2b95b8c937251bf4a862469a23da16b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 3859221584783072874}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3230134507451955658 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1827629865262933920, guid: 2b95b8c937251bf4a862469a23da16b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 3859221584783072874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4045858580318737869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -147,7 +234,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2d82dda03aec7214c89d767d5aeca881,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d82dda03aec7214c89d767d5aeca881,
         type: 3}
@@ -168,6 +255,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SK_CharM_Warrior
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d82dda03aec7214c89d767d5aeca881,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4436805663696350335, guid: 2d82dda03aec7214c89d767d5aeca881,
         type: 3}
@@ -209,12 +301,6 @@ PrefabInstance:
 --- !u!4 &4589026785087205926 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2d82dda03aec7214c89d767d5aeca881,
-    type: 3}
-  m_PrefabInstance: {fileID: 4045858580318737869}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &7588375537125288028 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 2d82dda03aec7214c89d767d5aeca881,
     type: 3}
   m_PrefabInstance: {fileID: 4045858580318737869}
   m_PrefabAsset: {fileID: 0}
